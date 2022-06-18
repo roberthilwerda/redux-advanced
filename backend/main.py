@@ -12,13 +12,13 @@ app = FastAPI()
 def update_cart(cart: List[dict]):
     # print(cart) ## list of BaseModel objects  
 
-    with open("./cart.jl", "w") as cart_file:
+    with open("./cart.txt", "w") as cart_file:
         for item in cart:
             cart_file.write(str(item)+'\n')
 
 def fetch_cart():
     cart = []
-    with open("./cart.jl", "r") as cart_file:
+    with open("./cart.txt", "r") as cart_file:
 
         try:
             for line in cart_file:
